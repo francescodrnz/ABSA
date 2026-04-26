@@ -102,6 +102,10 @@ def get_ai_curation(user_input, energy_mode, exclude_list=[], reference_tracks=N
             types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
         ],
         response_mime_type="application/json",
+        tools = [
+            types.Tool(googleSearch=types.GoogleSearch(
+        )),
+    ]
     )
     
     if reference_tracks:
